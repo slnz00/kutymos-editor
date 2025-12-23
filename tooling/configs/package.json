@@ -1,0 +1,12 @@
+{
+  "name": "@tooling/configs",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "",
+  "files": [
+    ".prettierrc.js",
+    "eslint.js",
+    "tsconfig.json"
+  ],
+  "devDependencies": {}
+}

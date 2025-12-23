@@ -1,0 +1,43 @@
+{
+  "name": "kutymos-editor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "dotenv -- turbo build --env-mode=loose",
+    "build:dev": "dotenv -- turbo build:dev --env-mode=loose",
+    "start": "dotenv -- turbo start --env-mode=loose",
+    "dev": "dotenv -- turbo dev --env-mode=loose",
+    "format": "dotenv -- turbo format --env-mode=loose",
+    "lint": "dotenv -- turbo lint --env-mode=loose",
+    "lint:fix": "dotenv -- turbo lint:fix --env-mode=loose"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": "10.19.0"
+  },
+  "dependencies": {
+    "dotenv-cli": "^11.0.0",
+    "turbo": "^2.7.1"
+  },
+  "devDependencies": {
+    "@tooling/configs": "workspace:*",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-turbo": "^0.0.10",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.7.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.19.0"
+}
