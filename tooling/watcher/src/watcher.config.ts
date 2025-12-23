@@ -1,4 +1,4 @@
-import { getCurrentPackageCwd, getPackageName } from './utils/package.utils';
+import { getCurrentPackageCwd, getPackageName } from "./utils/package.utils";
 
 type BasePath = string;
 type PackagePrefix = string;
@@ -24,24 +24,33 @@ export interface WatcherConfig {
 
 type PackageOverrides = Record<PackageName, Partial<WatcherConfig>>;
 
-const configs: Record<string, WatcherConfig & { overrides?: PackageOverrides }> = {
-  '@apps': {
+const configs: Record<
+  string,
+  WatcherConfig & { overrides?: PackageOverrides }
+> = {
+  "@apps": {
     exec: {
-      build: 'pnpm build:dev',
-      start: 'pnpm start:dev',
+      build: "pnpm build:dev",
+      start: "pnpm start:dev",
     },
     dependencies: {
-      '@packages/': '../../packages/',
+      "@packages/": "../../packages/",
     },
-    ext: ['ts', 'js'],
+    ext: ["ts", "js"],
     delay: 500,
-    overrides: {},
-  },
-  '@packages': {
-    exec: {
-      build: 'pnpm build:dev',
+    overrides: {
+      "@apps/editor": {
+        disableEvents: {
+          sourceChange: true,
+        },
+      },
     },
-    ext: ['ts', 'json'],
+  },
+  "@packages": {
+    exec: {
+      build: "pnpm build:dev",
+    },
+    ext: ["ts", "json"],
     delay: 500,
   },
 };
@@ -50,7 +59,9 @@ export const getWatcherConfig = (): WatcherConfig => {
   const cwd = getCurrentPackageCwd();
   const packageName = getPackageName(cwd);
 
-  const type = Object.keys(configs).find((prefix) => packageName.startsWith(prefix));
+  const type = Object.keys(configs).find((prefix) =>
+    packageName.startsWith(prefix),
+  );
 
   if (!type) {
     throw new Error(`Watcher config does not exist for: ${packageName}`);

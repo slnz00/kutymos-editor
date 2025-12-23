@@ -5,7 +5,7 @@
   "author": "",
   "files": [
     ".prettierrc.js",
-    "eslint.js",
+    "eslint.config.mjs",
     "tsconfig.json"
   ],
   "devDependencies": {}
