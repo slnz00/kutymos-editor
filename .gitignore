@@ -65,3 +65,5 @@ chromium
 .idea/**/dbnavigator.xml
 .idea/**/gradle.xml
 .idea/**/libraries
+
+.claude
