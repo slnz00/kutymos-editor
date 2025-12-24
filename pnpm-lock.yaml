@@ -80,13 +80,6 @@ importers:
         version: 8.50.1(eslint@9.39.2)(typescript@5.9.3)
 
   apps/editor:
-    dependencies:
-      '@electron-toolkit/preload':
-        specifier: ^3.0.2
-        version: 3.0.2(electron@39.2.7)
-      '@electron-toolkit/utils':
-        specifier: ^4.0.0
-        version: 4.0.0(electron@39.2.7)
     devDependencies:
       '@electron-toolkit/eslint-config-prettier':
         specifier: ^3.0.0
@@ -94,9 +87,15 @@ importers:
       '@electron-toolkit/eslint-config-ts':
         specifier: ^3.1.0
         version: 3.1.0(eslint@9.39.2)(typescript@5.9.3)
+      '@electron-toolkit/preload':
+        specifier: ^3.0.2
+        version: 3.0.2(electron@39.2.7)
       '@electron-toolkit/tsconfig':
         specifier: ^2.0.0
         version: 2.0.0(@types/node@25.0.3)
+      '@electron-toolkit/utils':
+        specifier: ^4.0.0
+        version: 4.0.0(electron@39.2.7)
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3

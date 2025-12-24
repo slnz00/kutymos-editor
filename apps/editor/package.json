@@ -6,23 +6,26 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "dev": "pnpm --filter @tooling/watcher watch",
     "start": "electron-vite preview",
     "start:dev": "electron-vite dev",
     "build": "electron-vite build",
+    "build:unpack": "pnpm build && electron-builder --dir",
+    "build:win": "pnpm build && electron-builder --win",
+    "build:mac": "pnpm build && electron-builder --mac",
+    "build:linux": "pnpm build && electron-builder --linux",
     "build:dev": "true",
     "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "dependencies": {
-    "@electron-toolkit/preload": "^3.0.2",
-    "@electron-toolkit/utils": "^4.0.0"
-  },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "@electron-toolkit/eslint-config-ts": "^3.1.0",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
     "@electron-toolkit/tsconfig": "^2.0.0",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
